@@ -32,7 +32,6 @@ const Quiz = ({quizConfiguration, handleSubmit}) => {
         setQuestions([...questions]);
     }
     useEffect(() => {
-
         fetch(`https://opentdb.com/api.php?amount=${AMOUNT_QUESTIONS}&category=${quizConfiguration.category}&difficulty=${quizConfiguration.difficulty}&type=multiple`)
         .then(response => response?.json())
         .then(json => json?.results)
