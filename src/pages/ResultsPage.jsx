@@ -12,7 +12,7 @@ const ResultsPage = () => {
     const goToHome = () => navigate("/");
     useEffect(() => {
         if(questions.length === 0) {
-            goToHome();
+            window.location = "/";
         }
     }, [questions.length]);
 
