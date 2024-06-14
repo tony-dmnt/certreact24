@@ -1,8 +1,8 @@
 import FormOption from "./FormOption";
 
-const FormSelect = ({placeholder, options = [], handleSelection}) => {
+const FormSelect = ({placeholder, options = [], handleSelection, id}) => {
     return (
-        <select className="select" onChange={(event) => handleSelection(event.target.value)}>
+        <select id={id} className="select" onChange={(event) => handleSelection(event.target.value)}>
             <FormOption value="" label={placeholder}/>
             {
                 options.map(
