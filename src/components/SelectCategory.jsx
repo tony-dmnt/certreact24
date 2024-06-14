@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import FormSelect from './Form/FormSelect';
 
-const SelectCategory = ({handleSelection}) =>
+const SelectCategory = ({handleSelection, id}) =>
 {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
@@ -13,6 +13,7 @@ const SelectCategory = ({handleSelection}) =>
         })
     }, []);
     return <FormSelect
+                id={id}
                 placeholder="Select a category"
                 options={categories}
                 handleSelection={handleSelection}/>;

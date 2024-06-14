@@ -7,9 +7,10 @@ const TRIVIA_DIFFICULTIES = [
     {id: "hard", name: "Hard"},
 ];
 
-const SelectDifficulty = ({handleSelection}) =>
+const SelectDifficulty = ({handleSelection, id}) =>
 {
     return <FormSelect
+                id={id}
                 placeholder="Select difficulty"
                 options={TRIVIA_DIFFICULTIES}
                 handleSelection={handleSelection}
