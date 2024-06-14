@@ -35,11 +35,11 @@ const Quiz = ({quizConfiguration, handleSubmit}) => {
         .then(response => response?.json())
         .then(json => json?.results)
         .then(apiQuestions => apiQuestions || [])
-        .then(apiQuestions => apiQuestions.map(mapQuestion))
+        .then(apiQuestions => apiQuestions.map(question => mapQuestion(question)))
         .then(apiQuestions => {
             setQuestions(apiQuestions || []);
         })
-    }, []);
+    }, [quizConfiguration.category, quizConfiguration.difficulty]);
     const isFinished = questions.flatMap(question => question.answers).filter(answer => answer.isSelected).length >= AMOUNT_QUESTIONS;
     return (
         <>

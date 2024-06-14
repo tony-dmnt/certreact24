@@ -1,6 +1,3 @@
-import QuestionLabel from "./QuestionLabel";
-import AnswerList from "./AnswerList";
-
 const Score = ({correct, total}) => {   
     const successRatio = correct/total;
     let className;

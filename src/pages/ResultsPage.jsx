@@ -14,7 +14,7 @@ const ResultsPage = () => {
         if(questions.length === 0) {
             goToHome();
         }
-    }, []);
+    }, [questions.length]);
 
     const total = questions.length;
     const correct = questions
