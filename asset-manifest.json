@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/certreact24/static/css/main.0ac4f570.css",
-    "main.js": "/certreact24/static/js/main.5b5744c1.js",
+    "main.js": "/certreact24/static/js/main.8802fc44.js",
     "index.html": "/certreact24/index.html",
     "main.0ac4f570.css.map": "/certreact24/static/css/main.0ac4f570.css.map",
-    "main.5b5744c1.js.map": "/certreact24/static/js/main.5b5744c1.js.map"
+    "main.8802fc44.js.map": "/certreact24/static/js/main.8802fc44.js.map"
   },
   "entrypoints": [
     "static/css/main.0ac4f570.css",
-    "static/js/main.5b5744c1.js"
+    "static/js/main.8802fc44.js"
   ]
 }
