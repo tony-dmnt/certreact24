@@ -1,0 +1,35 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.select {
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    margin: 5px;
+    box-shadow: 0px 2px 2px lightgray;
+}
+.button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px lightgray;
+}
+.submit-button {
+    width: 80%;
+}
+.answer {
+    background-color: white;
+    color: green;
+    &:hover {
+        background-color: green;
+        color: white;
+    }
+}
+.answer-selected {
+    background-color: green;
+    color: white;
+}
