@@ -2,6 +2,7 @@
   "name": "cert-react2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tony-dmnt.github.io/certreact24",
   "dependencies": {
     "gh-pages": "^6.1.1",
     "react": "^18.3.1",
@@ -12,7 +13,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b ghpage2 -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
