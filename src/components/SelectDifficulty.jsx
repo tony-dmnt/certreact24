@@ -1,5 +1,5 @@
 import React from 'react';
-import FormSelect from '../Form/FormSelect';
+import FormSelect from './Form/FormSelect';
 
 const TRIVIA_DIFFICULTIES = [
     {id: "easy", name: "Easy"},

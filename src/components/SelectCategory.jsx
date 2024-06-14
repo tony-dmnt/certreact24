@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import FormSelect from '../Form/FormSelect';
+import FormSelect from './Form/FormSelect';
 
 const SelectCategory = ({handleSelection}) =>
 {

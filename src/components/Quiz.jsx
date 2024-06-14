@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import QuizQuestion from "./QuizQuestion";
 import { v4 as uuid } from "uuid";
+import QuizQuestion from "./QuizQuestion";
 import SubmitButton from "./SubmitButton";
 
 const AMOUNT_QUESTIONS = 5;
 
-const QuizContent = ({quizConfiguration}) => {
+const Quiz = ({quizConfiguration, handleSubmit}) => {
     const [questions, setQuestions] = useState([]);
 
     const mapQuestion = (apiQuestion) => {
@@ -27,14 +27,9 @@ const QuizContent = ({quizConfiguration}) => {
         };
     }
     const handleAnswerSelection = (question, answer) => {
-        let indexQuestion = questions.findIndex((element) => element.id === question.id);
-        let updatedQuestions = [...questions];
-        question.selectedAnswer = answer;
         question.answers.forEach((element) => element.isSelected = element.id === answer.id)
-        updatedQuestions[indexQuestion] = question;
-        setQuestions(updatedQuestions);
+        setQuestions([...questions]);
     }
-
     useEffect(() => {
         fetch(`https://opentdb.com/api.php?amount=${AMOUNT_QUESTIONS}&category=${quizConfiguration.category}&difficulty=${quizConfiguration.difficulty}&type=multiple`)
         .then(response => response?.json())
@@ -45,7 +40,7 @@ const QuizContent = ({quizConfiguration}) => {
             setQuestions(apiQuestions || []);
         })
     }, []);
-    const isFinished = questions.filter(question => !!question.selectedAnswer).length >= AMOUNT_QUESTIONS;
+    const isFinished = questions.flatMap(question => question.answers).filter(answer => answer.isSelected).length >= AMOUNT_QUESTIONS;
     return (
         <>
             {
@@ -57,8 +52,8 @@ const QuizContent = ({quizConfiguration}) => {
                         />
                 )
             }
-            {isFinished && <SubmitButton/>}
+            {isFinished && <SubmitButton handleSubmit={() => handleSubmit(questions)}/>}
         </>
     );
 }
-export default QuizContent;
+export default Quiz;

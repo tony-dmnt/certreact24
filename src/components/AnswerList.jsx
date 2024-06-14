@@ -1,6 +1,6 @@
 import Answer from "./Answer";
 
-const AnswerList = ({answers, handleAnswerSelection}) => {
+const AnswerList = ({answers, displayResult, handleAnswerSelection}) => {
     return (
         <>
             {
@@ -9,6 +9,7 @@ const AnswerList = ({answers, handleAnswerSelection}) => {
                     <Answer 
                         key={answer.id}
                         answer={answer}
+                        displayResult={displayResult}
                         handleClick={handleAnswerSelection}
                     />
                 )

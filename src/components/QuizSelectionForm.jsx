@@ -6,8 +6,8 @@ import { v4 as uuid } from "uuid";
 
 const QuizSelectionForm = ({handleSelection}) =>
 {
-    const [category, setCategory] = useState('13');
-    const [difficulty, setDifficulty] = useState('easy');
+    const [category, setCategory] = useState();
+    const [difficulty, setDifficulty] = useState();
     const isButtonClickable = category && difficulty;
     const createQuiz = () => handleSelection({id: uuid(), category, difficulty});
     return (
